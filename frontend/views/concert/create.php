@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Concert */
 
-$this->title = 'Create Concert';
-$this->params['breadcrumbs'][] = ['label' => 'Concerts', 'url' => ['index']];
+$this->title = 'Create concert place';
+$this->params['breadcrumbs'][] = ['label' => 'Concert places', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="concert-create">
