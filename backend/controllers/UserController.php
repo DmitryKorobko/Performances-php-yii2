@@ -3,18 +3,17 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\Concert;
-use common\models\ConcertSearch;
+use common\models\User;
+use backend\models\UserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-use common\models\User;
 
 /**
- * ConcertController implements the CRUD actions for Concert model.
+ * UserController implements the CRUD actions for User model.
  */
-class ConcertController extends Controller
+class UserController extends Controller
 {
     /**
      * @inheritdoc
@@ -78,12 +77,12 @@ class ConcertController extends Controller
     }
 
     /**
-     * Lists all Concert models.
+     * Lists all User models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new ConcertSearch();
+        $searchModel = new UserSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -93,7 +92,7 @@ class ConcertController extends Controller
     }
 
     /**
-     * Displays a single Concert model.
+     * Displays a single User model.
      * @param integer $id
      * @return mixed
      */
@@ -105,16 +104,16 @@ class ConcertController extends Controller
     }
 
     /**
-     * Creates a new Concert model.
+     * Creates a new User model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Concert();
+        $model = new User();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->place_id]);
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -123,7 +122,7 @@ class ConcertController extends Controller
     }
 
     /**
-     * Updates an existing Concert model.
+     * Updates an existing User model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -133,7 +132,7 @@ class ConcertController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->place_id]);
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -142,7 +141,7 @@ class ConcertController extends Controller
     }
 
     /**
-     * Deletes an existing Concert model.
+     * Deletes an existing User model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -155,15 +154,15 @@ class ConcertController extends Controller
     }
 
     /**
-     * Finds the Concert model based on its primary key value.
+     * Finds the User model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Concert the loaded model
+     * @return User the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Concert::findOne($id)) !== null) {
+        if (($model = User::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
