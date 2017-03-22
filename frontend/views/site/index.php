@@ -2,14 +2,17 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'Performances';
 ?>
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>Congratulations!</h1>
+        <h1>Welcome!</h1>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
+        <p class="lead">You are signed in to your account. If you are admin,
+            you can view/create/update/delete all records in tables. If you
+            are user, you can view only.
+        </p>
 
         <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
     </div>

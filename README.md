@@ -1,20 +1,15 @@
 Yii 2 Advanced Project Template
 ===============================
 
-Yii 2 Advanced Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
-developing complex Web applications with multiple tiers.
+Dump the database is stored in the root of the project file "dump_db.sql"
+To start the project:
+1. It is necessary to initialize the project (execute "php init" on the command line);
+2. Run the "composer update" command;
+3. Specify the data for accessing the database in the settings of the file "common / config / main-local.php";
+4. Apply the migration (execute "php yii migrate" on the command line);
+5. After these actions, the table "user" appears in the database, in which there will already be an administrator with the login "admin" and the password "adminadmin";
 
-The template includes three tiers: front end, back end, and console, each of which
-is a separate Yii application.
-
-The template is designed to work in a team development environment. It supports
-deploying the application in different environments.
-
-Documentation is at [docs/guide/README.md](docs/guide/README.md).
-
-[![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-app-advanced/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-app-advanced)
-[![Total Downloads](https://poser.pugx.org/yiisoft/yii2-app-advanced/downloads.png)](https://packagist.org/packages/yiisoft/yii2-app-advanced)
-[![Build Status](https://travis-ci.org/yiisoft/yii2-app-advanced.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-app-advanced)
+Access control is implemented through RBAC.
 
 DIRECTORY STRUCTURE
 -------------------

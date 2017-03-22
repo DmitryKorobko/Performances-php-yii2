@@ -28,7 +28,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'artist_id',
             'artist_name',
             'band_name',
         ],
